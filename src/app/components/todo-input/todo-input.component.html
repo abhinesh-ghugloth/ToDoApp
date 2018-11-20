@@ -1,0 +1,32 @@
+<div class="totdo-input-wrapper">
+  <input type="text" class="" [(ngModel)]="todoText"/> 
+  <button class="btn btn-primary" (click)="addTodo()"> Submit </button>
+</div>
+<div class="tables"> 
+   
+    <tbody class="border">
+        <tr class="table-row1" *ngFor="let todo of todoList; let i=index">
+          <td class="table-headings">   <textarea [readonly]="edit">  {{i+1}} {{todo}} </textarea> </td>
+          <td class="" (click)="todoList.splice(i,1)"> <button>Delete</button> </td>
+          <td class="" (click)="editTodo()">  <button *ngIf="editsTodo">Edit</button> </td>
+               <td class="" (click)="saveTodo()">  <button *ngIf="todoSave"> Save </button> </td>
+         </tr>
+        </tbody>
+  <!-- <ul>
+    <li *ngFor="let todo of todoList; let i=index">
+       <textarea [readonly]="edit">  {{i+1}} {{todo}} </textarea>
+      <span (click)="todoList.splice(i,1)">
+          <button>Delete</button>
+        </span>
+        <span (click)="editTodo()">
+            <button *ngIf="editsTodo">Edit</button>
+          </span>
+          <span (click)="saveTodo()">
+              <button *ngIf="todoSave"> Save </button>
+            </span>
+    </li> 
+    
+       
+      
+  </ul> -->
+</div>
